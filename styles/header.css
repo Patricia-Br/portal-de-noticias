@@ -1,5 +1,5 @@
 #primary{
-  padding-block: 20px;
+  padding-block: 16px;
 
   div{
     display: flex;
@@ -10,6 +10,10 @@
   /* nesting css  */
   div:nth-child(2){
     margin-inline: auto;
+
+    .logo{
+      height: 12px;
+    }
   }
 
   div:nth-child(3){
@@ -20,6 +24,27 @@
 #secondary{
   padding-block: 14px;
   border: 1px solid var(--stroke-color);
+  gap: 32px;
   border-inline: none;
-  justify-content: space-between;
+  overflow-x: scroll;
+}
+
+@media (width >= 80em){
+  #primary{
+    padding-block: 20px;
+    
+    div:nth-child(2){
+      margin-inline: auto;
+      
+      .logo{
+        height: 16px;
+      }
+    }
+  }
+  
+  #secondary{
+    justify-content: space-between;
+    overflow-x: hidden;
+
+  }
 }

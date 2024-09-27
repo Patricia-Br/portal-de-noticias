@@ -59,18 +59,27 @@ section header{
         margin-top: 8px;
       }
     }
+
+    @media (width < 80em){
+      .principal{
+        height: 416px;
+      }
+
+      figcaption .principal-title{
+        height: 96px;
+        overflow: hidden;
+      }
+    }
   }
+
+  
 }
 
 #weekly{
   grid-area: weekly;
 
   &>div {
-    grid-template-columns: repeat(4, 292px);
-  }
-
-  img{
-    height: 160px;
+    grid-template-columns: 1fr;
   }
 
   figure{
@@ -87,19 +96,50 @@ section header{
       font-weight: 800;
     }
   }
+
+  @media (width >= 80em){
+    img{
+      height: 160px;
+    }
+
+    &>div {
+      grid-template-columns: repeat(4, 292px);
+    }
+  }
 }
 
 #ai{
+    
   grid-area: ai;
-
+  
   img{
     width: 176px;
     aspect-ratio: 1/1;
     object-fit: cover;
   }
-
+  
   h3{
     margin-block: 8px 4px;
+  }
+
+  @media (width < 80em){
+    div article{
+      grid: none;
+      display: flex;
+      flex-direction: row-reverse; 
+      height: 164px;
+      overflow: hidden;
+
+      div:nth-child(1) h3{
+        height: 44px;
+        overflow: hidden;
+      }
+
+      div:has(img){
+        width: 100vh;
+
+      }
+    }
   }
 }
 
@@ -120,4 +160,15 @@ aside{
     object-fit: cover;
     border-radius: 3px;
   }
+
+  @media (width < 80em){
+    
+    div article{
+      div:nth-child(2) h3{
+        height: 40px;
+        overflow: hidden;
+      }
+    }
+  }
+   
 }
